@@ -18,3 +18,25 @@ variable "tags" {
   type        = map(string)
   description = "A map of tags to assign to the bucket"
 }
+
+variable "s3_bucket_name" {
+  type        = string
+  description = "The name of the S3 bucket to create"
+}
+
+variable "s3_bucket_acl" {
+  type        = string
+  description = "The ACL to apply to the S3 bucket"
+}
+
+variable "s3_bucket_versioning" {
+  type        = object({
+    enabled : bool
+  })
+  description = "Versioning configuration for the S3 bucket"
+}
+
+variable control_object_ownership {
+  type = bool
+  description = "Control object ownership setting for the S3 bucket"
+}

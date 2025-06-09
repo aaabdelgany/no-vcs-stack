@@ -3,9 +3,15 @@ identity_token "aws" {
 }
 
 deployment "test-deployment" {
-  import = "true"
+  # import = "true" # required for non vcs backed stacks 
   inputs = {
     region = "us-west-2"
+    bucket = "demo-terarform-bucket-stack-terraform-test"
+    acl    = "private"
+    control_object_ownership = true
+    versioning = {
+      enabled = true
+    }
     tags = {
       CanDelete    = "true"
       Organization = "stacks-sujay-test-01"
