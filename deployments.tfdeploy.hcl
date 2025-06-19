@@ -3,7 +3,7 @@ identity_token "aws" {
 }
 
 deployment "test-deployment" {
-  # import = "true" # required for non vcs backed stacks 
+  import = true #required for non vcs backed stacks 
   inputs = {
     region                   = "us-west-2"
     s3_bucket_name           = "stacks-sujay-test-01-project-no-vcs-stacks"
